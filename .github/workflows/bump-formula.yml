@@ -1,0 +1,24 @@
+name: Bump Homebrew Formula
+
+on:
+  release:
+    types: [released]
+
+permissions:
+  contents: read
+
+jobs:
+  bump:
+    name: Bump Formula
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Update Homebrew formula
+        uses: dawidd6/action-homebrew-bump-formula@v10
+        with:
+          token: ${{ secrets.HOMEBREW_TAP_TOKEN }}
+          user_name: github-actions[bot]
+          user_email: 41898282+github-actions[bot]@users.noreply.github.com
+          message: For additional details see ${{github.event.release.html_url}}
+          tap: lareii/tap
+          formula: jule
