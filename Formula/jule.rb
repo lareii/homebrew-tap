@@ -1,5 +1,5 @@
 class Jule < Formula
-  desc "The Jule Programming Language"
+  desc "Simple and safe programming language"
   homepage "https://jule.dev/"
   version "0.3.0"
 
@@ -38,7 +38,7 @@ class Jule < Formula
     bin.install_symlink libexec/"bin/julec"
   end
 
-  def test
+  test do
     system bin/"julec", "version"
   end
 end
